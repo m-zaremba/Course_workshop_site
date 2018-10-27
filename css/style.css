@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,800,900&subset=latin-ext');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Raleway, Tahoma, serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: black;
+  height: 50px;
+  color: white;
+  text-transform: uppercase;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75%;
+}
+
+.main_navigation ul {
+  display: flex;
+}
+
+.nav_list {
+  list-style: none;
+}
+
+.nav_list li {
+  width: 130px;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.motto {
+  font-weight: 700;
+}
+
+.motto_green {
+  color: #27c7ab;
+  font-weight: 900;
+}
