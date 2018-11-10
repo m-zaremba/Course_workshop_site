@@ -1,19 +1,81 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,800,900&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600,700,800&subset=latin-ext');
 
-/**
-Basic stylee
- */
+/* Basic style */
+
+@font-face {
+  font-family: 'raleway';
+  src: url('../fonts/raleway-regular-webfont.woff2') format('woff2'),
+  url('../fonts/raleway-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'raleway';
+  src: url('../fonts/raleway-bold-webfont.woff2') format('woff2'),
+  url('../fonts/raleway-bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'raleway';
+  src: url('../fonts/raleway-extrabold-webfont.woff2') format('woff2'),
+  url('../fonts/raleway-extrabold-webfont.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'raleway';
+  src: url('../fonts/raleway-semibold-webfont.woff2') format('woff2'),
+  url('../fonts/raleway-semibold-webfont.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Raleway, Tahoma, serif;
+  font-family: raleway, Tahoma, Arial, sans-serif;
 }
 
-/**
-Header style
- */
+.main_width {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  z-index: 1;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  color: white;
+  background-color: #24ba9f;
+}
+
+button:hover {
+  box-shadow: 0 0 30px grey ;
+}
+
+/* Header style */
 
 header {
   display: flex;
@@ -25,43 +87,30 @@ header {
   text-transform: uppercase;
 }
 
-.width_container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 70%;
-}
-
 .main_navigation > ul {
   display: flex;
-}
-
-.nav_list {
-  list-style: none;
+  padding-right: 12px;
+  padding-top: 5px;
 }
 
 .nav_list li {
-  text-align: center;
-  width: 100px;
+  list-style: none;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: .05em;
+  padding-left: 45px;
 }
 
-a {
-  text-decoration: none;
-  color: white;
-}
-
-.motto {
+.brand_name {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: .05em;
+  padding-top: 4px;
 }
 
-.text_green {
+.text_strong {
   color: #27c7ab;
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .first_menu {
@@ -71,17 +120,13 @@ a {
 .about_submenu {
   padding-top: 10px;
   position: absolute;
-  top: 40px;
-  left: -15px;
+  top: 38px;
+  left: 29px;
   background-color: black;
-  height: 100px;
-  width: 122px;
+  height: 96px;
+  width: 120px;
   text-transform: none;
   z-index: 2;
-}
-
-.about_submenu li {
-  text-align: left;
 }
 
 .about_submenu::before {
@@ -92,13 +137,79 @@ a {
   background-color: black;
   position: absolute;
   top: -6px;
-  left: 42%;
+  left: 37%;
   z-index: -1;
 }
 
 .about_submenu > li {
   list-style: none;
-  line-height: 30px;
-  padding-left: 15px;
+  line-height: 27px;
+  padding-left: 13px;
+  text-align: left;
+  font-weight: 600;
 }
 
+/* Section 1 style style */
+
+.section.slider {
+  height: 505px;
+  background: rgb(201,201,201);
+  background: -moz-linear-gradient(0deg, rgba(201,201,201,1) 5%, rgba(211,211,211,1) 14%, rgba(243,243,243,1) 38%, rgba(255,254,254,1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(201,201,201,1) 5%, rgba(211,211,211,1) 14%, rgba(243,243,243,1) 38%, rgba(255,254,254,1) 100%);
+  background: linear-gradient(0deg, rgba(201,201,201,1) 5%, rgba(211,211,211,1) 14%, rgba(243,243,243,1) 38%, rgba(255,254,254,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c9c9c9",endColorstr="#fffefe",GradientType=1);
+}
+
+.nav_button {
+  font-size: 80px;
+  font-weight: 300;
+  color: #24ba9f;
+  padding: 0 5px;
+  cursor: default;
+}
+
+.nav_button:hover {
+  text-shadow: 0 0 7px #000000;
+}
+
+.main_photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 414px;
+}
+
+.main_photo img {
+  padding-top: 55px;
+  height: 477px;
+}
+
+.chair_description {
+  padding: 27px 91px 15px 18px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.chair_description h1 {
+  font-size: 38px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.015em;
+}
+
+.chair_description p {
+  line-height: 1.5em;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.view_more {
+  border-radius: 10px;
+  width: 262px;
+  height: 50px;
+  font-size: 24px;
+}
+
+.button_right {
+  margin-right: 9px;
+}
