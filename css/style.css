@@ -280,3 +280,195 @@ header {
   display: block;
   margin-top: 2px;
 }
+
+/* Section 3 style */
+
+.section.price_list {
+  height: 725px;
+  background-color: #f1f1f1;
+}
+
+.all_plans {
+  width: 100%;
+}
+
+.price_list .main_width {
+  align-items: flex-start;
+  padding-top: 45px;
+  padding-right: 26px;
+}
+
+.plan_container {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 5px;
+}
+
+.title_price {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 20px;
+  letter-spacing: .07em;
+}
+
+.title_price:after {
+  content: '';
+  margin-top: 5px;
+  width: 320px;
+  height: 8px;
+  background-color: #27c7ab;
+  display: block;
+}
+
+.plan {
+  padding-top: 28px;
+  height: 500px;
+  width: 328px;
+  margin: 75px 2px;
+  border: gainsboro solid 2px;
+  background-color: #f9f9f9;
+  text-align: center;
+  position: relative;
+  font-size: 22px;
+}
+
+.circle {
+  position: absolute;
+  left: 50%;
+  top: -38px;
+  width: 56px;
+  height: 56px;
+  padding: 25px;
+  background-color: white;
+  border: gainsboro solid 2px;
+  border-radius: 50%;
+  z-index: 0;
+  transform: translate(-50%, 0);
+}
+
+.circle::after {
+  content: "";
+  display: block;
+  background-color: #c2c2c2;
+  position: absolute;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  top: 13px;
+  left: 13px;
+}
+
+.plan_ver {
+  color: #27c7ab;
+}
+
+.price {
+  color: #c2c2c2;
+  font-size: 45px;
+  font-weight: 700;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: gainsboro solid 2px;
+  line-height: 28px;
+  padding-top: 21px;
+  background-color: white;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  text-indent: 6px;
+  transform: translate(-50%, 0);
+}
+
+.sup {
+  font-size: 15px;
+  vertical-align: 26px;
+}
+
+.currency_time {
+  color: #c2c2c2;
+  font-size: 16px;
+  margin-top: 0;
+}
+
+.plan_items {
+  position: absolute;
+  width: 100%;
+  top: 244px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.plan_items td {
+  height: 44px;
+}
+
+tr {
+  color: #8f8f8f;
+  letter-spacing: .05em;
+}
+
+tr:nth-child(odd) {
+  background-color: #e4e4e4;
+}
+
+tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+.join_button {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  width: 122px;
+  height: 34px;
+  border-radius: 10px;
+  letter-spacing: .05em;
+  transform: translate(-50%, 0);
+}
+
+.price_list > .price {
+  text-indent: 12px;
+}
+
+.plan.marked {
+  border: #27c7ab solid 2px;
+  background-color: #27c7ab;
+}
+
+.circle.marked {
+  background-color: #27c7ab;
+  border: #27c7ab solid 2px;
+}
+
+.circle.marked::after {
+  background-color: white;
+}
+
+.price.marked {
+  color: #27c7ab;
+  border: #27c7ab solid 2px;
+}
+
+.currency_time.marked {
+  color: #27c7ab;
+}
+
+.join_button.marked {
+  color: #27c7ab;
+  background-color: white;
+}
+
+.marked tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+.marked tr:nth-child(odd) {
+  background-color: white;
+}
+
+.plan_ver.marked {
+  color: white;
+}
