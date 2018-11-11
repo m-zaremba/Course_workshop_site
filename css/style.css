@@ -149,7 +149,7 @@ header {
   font-weight: 600;
 }
 
-/* Section 1 style style */
+/* Section 1 - Slider - style style */
 
 .section.slider {
   height: 505px;
@@ -165,7 +165,6 @@ header {
   font-weight: 300;
   color: #24ba9f;
   padding: 0 5px;
-  cursor: default;
 }
 
 .nav_button:hover {
@@ -214,7 +213,7 @@ header {
   margin-right: 9px;
 }
 
-/* Section 2 style */
+/* Section 2 - Gallery - style */
 
 .section.gallery {
   height: 350px;
@@ -281,7 +280,7 @@ header {
   margin-top: 2px;
 }
 
-/* Section 3 style */
+/* Section 3 - Price list - style */
 
 .section.price_list {
   height: 725px;
@@ -471,4 +470,192 @@ tr:nth-child(even) {
 
 .plan_ver.marked {
   color: white;
+}
+
+/* Section 4 - Contact - style */
+
+.section.contact {
+  height: 550px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact_form {
+  display: flex;
+  justify-content: space-around;
+}
+
+.form {
+  display: flex;
+}
+
+.contact_header {
+  color: black;
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.contact_header::after {
+  content: '';
+  width: 320px;
+  height: 8px;
+  background-color: #27c7ab;
+  display: block;
+  margin-top: 4px;
+  margin-bottom: 45px;
+}
+
+.form_left {
+  padding-top: 18px;
+  height: 520px;
+  padding-left: 9px;
+}
+
+.contact_form input:not(.checkbox),
+.contact_form textarea {
+  width: 632px;
+  border: 1px solid #a6e3d3;
+  font-size: 34px;
+  color: #bcbcbc;
+  height: 66px;
+  margin-bottom: 26px;
+  text-indent: 12px;
+  letter-spacing: -.04em;
+  resize: none;
+  outline: none;
+  transition: 0.5s;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+textarea:focus {
+  box-shadow: 0 0 3px #27c7ab;
+}
+
+.form-group textarea {
+  height: 188px;
+  padding-top: 10px;
+}
+
+.form_right {
+  padding-top: 72px;
+  margin-left: 23px;
+}
+
+.red_chair {
+  padding-left: 54px;
+  margin-bottom: 28px;
+}
+
+.checkbox input[type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.checkbox label::before {
+  content: "";
+  display: inline-block;
+  height: 46px;
+  width: 46px;
+  border: #a6e3d3 solid 1px;
+  left: -61px;
+  top: -3px;
+  transition: 0.5s;
+}
+
+.checkbox label::after {
+  content: "";
+  background: url("../images/form_ok.jpg") no-repeat;
+  background-size: contain;
+  width: 42px;
+  height: 40px;
+  display: inline-block;
+  top: 5px;
+  left: -60px;
+}
+
+.checkbox label {
+  position: relative;
+  letter-spacing: -.015em;
+  font-size: 20px;
+  color: #bcbcbc;
+}
+
+.checkbox label::before,
+.checkbox label::after {
+  position: absolute;
+}
+
+.checkbox input[type="checkbox"] + label::after {
+  content: none;
+}
+
+.checkbox input[type="checkbox"]:checked + label::after {
+  content: "";
+}
+
+.checkbox input[type="checkbox"]:focus + label::before {
+  box-shadow: 0 0 3px #27c7ab;
+}
+
+.checkbox {
+  width: 310px;
+  margin-left: 96px;
+  padding-top: 5px;
+  border-color: #a6e3d3;;
+}
+
+.form-group button {
+  position: absolute;
+  width: 343px;
+  height: 72px;
+  border-radius: 10px;
+  top: 35px;
+  left: 35px;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  text-indent: 8px;
+}
+
+.form_button {
+  position: relative;
+}
+
+/* Footer Style*/
+
+footer {
+  display: flex;
+  justify-content: center;
+  height: 110px;
+  color: #969696;
+}
+
+.motto_likes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  padding-right: 12px;
+}
+
+.copyright {
+  letter-spacing: 0.08em;
+  font-size: 15px;
+  padding-bottom: 22px;
+}
+
+.footer_motto {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  margin-left: 64px
+}
+
+.like_us {
+  padding-bottom: 9px;
 }
