@@ -37,7 +37,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: raleway, Tahoma, Arial, sans-serif;
 }
 
@@ -80,6 +79,7 @@ button:hover {
 header {
   display: flex;
   justify-content: center;
+  align-content: space-between;
   width: 100%;
   background-color: black;
   height: 41px;
@@ -95,6 +95,7 @@ header {
 
 .nav_list li {
   list-style: none;
+  color: white;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: .05em;
@@ -115,9 +116,10 @@ header {
 
 .first_menu {
   position: relative;
+  width: auto;
 }
 
-.about_submenu {
+.submenu {
   padding-top: 10px;
   position: absolute;
   top: 38px;
@@ -127,9 +129,11 @@ header {
   width: 120px;
   text-transform: none;
   z-index: 2;
+  visibility: hidden;
+  transition: 100ms;
 }
 
-.about_submenu::before {
+.submenu::before {
   content: '';
   width: 20px;
   height: 20px;
@@ -141,7 +145,7 @@ header {
   z-index: -1;
 }
 
-.about_submenu > li {
+.submenu > li {
   list-style: none;
   line-height: 27px;
   padding-left: 13px;
@@ -180,7 +184,12 @@ header {
 
 .main_photo img {
   padding-top: 55px;
-  height: 477px;
+  width: 470px;
+  display: none;
+}
+
+.main_photo .visible{
+  display: inline-block;
 }
 
 .chair_description {
@@ -211,6 +220,31 @@ header {
 
 .button_right {
   margin-right: 9px;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
 }
 
 /* Section 2 - Gallery - style */
@@ -269,6 +303,12 @@ header {
   padding-left: 14px;
   font-weight: 600;
   font-size: 1em;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .box_text::after {
@@ -343,6 +383,7 @@ header {
   border-radius: 50%;
   z-index: 0;
   transform: translate(-50%, 0);
+  box-sizing: border-box;
 }
 
 .circle::after {
@@ -377,6 +418,7 @@ header {
   left: 50%;
   text-indent: 6px;
   transform: translate(-50%, 0);
+  box-sizing: border-box;
 }
 
 .sup {
@@ -472,7 +514,251 @@ tr:nth-child(even) {
   color: white;
 }
 
-/* Section 4 - Contact - style */
+/* Section 4 - chair calculator */
+
+.application {
+  background-color: #f9f9f9;
+  padding:30px 0;
+}
+.application h3 {
+  color: #575757;
+  font-size: 18px;
+}
+
+.application header.align_right{
+  text-align: right;
+}
+
+.inline {
+  display:inline-block;
+  width:300px;
+  padding:14px;
+  vertical-align: top;
+  box-sizing: initial;
+}
+
+.form_calculator {
+  margin-top:50px;
+}
+
+.drop_down_list {
+  border:1px solid #8de0d2;
+  width: 280px;
+  height:38px;
+  background-color: white;
+  margin-top:22px;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.list_label {
+  font-size: 30px;
+  color: #e2e2e2;
+  font-family: 'ralewaylight', Arial, Tahoma, sans-serif;
+}
+
+.checkbox_calculator {
+  position: relative;
+  padding: 30px 30px 30px 0;
+}
+.checkbox_calculator input {
+  display: block;
+  opacity: 0;
+  height: 48px;
+  position: absolute;
+  width: 48px;
+  cursor: pointer;
+}
+
+.checkbox_calculator label {
+  display: block;
+  padding-left: 65px;
+  position: relative;
+  font-size: 28px;
+  color: #cecece;
+  line-height: 120%;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.checkbox_calculator label::before, .checkbox_calculator label::after {
+  border: #a6e3d3 solid 1px;;
+  content: "";
+  display: block;
+  left: 0;
+  height: 46px;
+  position: absolute;
+  width: 48px;
+  top: 0;
+  transition: 0.5s;
+}
+
+.checkbox_calculator label::after {
+  background: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20preserveAspectRatio%3D%22xMidYMid%22%20width%3D%2233.875%22%20height%3D%2233%22%20viewBox%3D%220%200%2033.875%2033%22%3E%0A%20%20%3Cpath%20d%3D%22M9.470%2C15.209%20L14.061%2C24.104%20C14.061%2C24.104%2021.522%2C6.026%2033.287%2C-0.000%20C33.000%2C4.304%2031.852%2C8.035%2033.861%2C12.626%20C28.696%2C13.774%2018.078%2C26.687%2014.635%2C33.000%20C9.756%2C26.974%204.017%2C22.382%20-0.000%2C20.948%20L9.470%2C15.209%20Z%22%20fill%3D%22%2327c7ab%22/%3E%0A%3C/svg%3E%0A") no-repeat center;
+  border: 0;
+  display: none;
+}
+
+.checkbox_calculator input:checked + label::after {
+  display: block;
+}
+
+.checkbox_calculator input[type="checkbox"]:focus + label::before {
+  box-shadow: 0 0 3px #27c7ab;
+}
+
+.active {
+  background: url('../images/form_ok.jpg');
+  width: 48px;
+  height: 40px;
+}
+
+.inline_text {
+  display: inline-block;
+  width: 228px;
+  vertical-align: top;
+  margin-top: 30px;
+  margin-left: 15px;
+  color: #aeaeae;
+}
+
+.image_part img{
+  margin-left: 38px;
+}
+
+.application .green_bell {
+  background-color: #24baa0;
+  width: 200px;
+  height: 6px;
+  display: inline-block;
+  margin: 5px 0 5px 0;
+}
+
+.summary_panel {
+  background-color: white;
+  width:100%;
+  height:195px;
+  padding:10px;
+  margin-top: 50px;
+}
+
+.application .green_button {
+  background-color: #27c7ab;
+  color: white;
+  text-align:center;
+  text-transform: uppercase;
+  width: 200px;
+  padding: 10px 30px;
+  font-size: 24px;
+  display: inline-block;
+  font-family: 'ralewaymedium', Arial, Tahoma, sans-serif;
+  margin-top: 20px;
+  margin-left: 29px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.panel_left {
+  display: inline-block;
+  width: 185px;
+  vertical-align: top;
+  padding-bottom:10px;
+  border-bottom:1px solid #e7e7e7;
+  height: 135px;
+}
+
+.panel_right {
+  display: inline-block;
+  width: 100px;
+  border-left:1px solid #e7e7e7;
+  text-align: right;
+  vertical-align: top;
+  padding-bottom:10px;
+  border-bottom:1px solid #e7e7e7;
+  height: 135px;
+}
+
+.panel_left h4 , .panel_right h4{
+  color: #24baa0;
+  font-size: 23px;
+}
+
+.panel_left span{
+  margin-top:10px;
+  font-size: 22px;
+  color: #5b5a5a;
+  display: block;
+}
+
+.panel_right span {
+  display: block;
+  font-size: 22px;
+  color: #24baa0;
+  margin-top:10px;
+}
+
+.sum_label {
+  display: inline-block;
+  width: 185px;
+  margin-top: 10px;
+  font-size: 22px;
+  color: #5b5a5a;
+}
+
+.sum {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  margin-top: 10px;
+  font-size: 22px;
+  color: #24baa0;
+}
+
+.list_arrow {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #24baa0;
+  display:block;
+  position: absolute;
+  right: 14px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.list_panel {
+  background-color: white;
+  border: 1px solid #ccc;
+  width: 288px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  list-style: none;
+  margin: 0;
+  left: 0;
+  z-index: 2;
+  position: absolute;
+  top: 54px;
+  display: none;
+}
+
+.list_panel li {
+  margin-top:10px;
+  cursor: pointer;
+  color: #585858;
+}
+
+.title {
+  height: 30px;
+}
+
+.align_right {
+  text-align: right;
+}
+
+
+
+/* Section 5 - Contact - style */
 
 .section.contact {
   height: 550px;
@@ -553,7 +839,7 @@ textarea:focus {
 
 .checkbox input[type="checkbox"] {
   position: absolute;
-  left: -9999px;
+  opacity: 0;
 }
 
 .checkbox label::before {
@@ -614,8 +900,8 @@ textarea:focus {
   width: 343px;
   height: 72px;
   border-radius: 10px;
-  top: 35px;
   left: 35px;
+  top: 50px;
   font-size: 32px;
   font-weight: bold;
   letter-spacing: 0.03em;
