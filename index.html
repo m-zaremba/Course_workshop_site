@@ -10,21 +10,23 @@
 
   <header>
     <div class="main_width">
-      <div class="brand_name">sit <span class="text_strong"> on </span> chair</div>
-      <nav class="main_navigation">
-        <ul class="nav_list">
-          <li class="first_menu">
-            <a href="#">o firmie</a>
-            <ul class="about submenu">
-              <li><a href="#">Aktualności</a></li>
-              <li><a href="#">Nasz team</a></li>
-              <li><a href="#">Historia</a></li>
-            </ul>
-          </li>
-          <li class="first_menu"><a href="#">galeria</a></li>
-          <li class="first_menu"><a href="#">kontakt</a></li>
-        </ul>
-      </nav>
+      <div class="head_wrapper">
+        <div class="brand_name">sit <span class="text_strong"> on </span> chair</div>
+        <nav class="main_navigation">
+          <ul class="nav_list mobile_menu">
+            <li class="first_menu">
+              <a href="#">o firmie</a>
+              <ul class="about submenu">
+                <li><a href="#">Aktualności</a></li>
+                <li><a href="#">Nasz team</a></li>
+                <li><a href="#">Historia</a></li>
+              </ul>
+            </li>
+            <li class="first_menu"><a href="#">galeria</a></li>
+            <li class="first_menu"><a href="#">kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -32,17 +34,20 @@
 
   <section class="section slider">
     <div class="main_width">
-      <a href="#" class="slider_button"><div class="nav_button button_left">&lt;</div></a>
-      <div class="main_photo">
+      <div class="slider_button nav_button button_left">&lt;</div>
+      <div class="slider_button nav_button button_right">&gt;</div>
+      <div class="main_photo inline">
         <img class="fade" src="images/black_chair.png" alt="photo of black chair">
         <img class="fade" src="images/orange_chair.png" alt="photo of orange chair">
       </div>
-      <div class="chair_description">
-        <h1>Sit <span class="text_strong">on</span> our <span class="text_strong">chair</span></h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br> Cupiditate deleniti fugiat illo sit veniam. Adipisci at doloremque est eum labore, laborum modi mollitia, nobis obcaecati quae quas similique suscipit voluptatem.</p>
-        <button class="view_more">Zobacz więcej</button>
+      <div class="chair_description inline">
+        <div class="wrapper">
+          <h1>Sit <span class="text_strong">on</span> our <span class="text_strong">chair</span></h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br> Cupiditate deleniti fugiat illo sit veniam. Adipisci at doloremque est eum labore, laborum modi mollitia, nobis obcaecati quae quas similique suscipit voluptatem.</p>
+          <button class="view_more">Zobacz więcej</button>
+        </div>
       </div>
-      <a href="#" class="slider_button"><div class="nav_button button_right">&gt;</div></a>
+
     </div>
   </section>
 
@@ -66,11 +71,11 @@
         <div class="all_plans">
           <h1 class="title_price">cennik</h1>
           <div class="plan_container">
-            <div class="plan">
-              <div class="circle"></div>
-              <div class="plan_ver">BASIC PLAN</div>
-              <div class="price">85<span class="sup">99</span><br><span class="currency_time">PLN/MSC</span></div>
-              <table class="plan_items">
+            <div class="plan unmarked">
+              <div class="circle unmarked"></div>
+              <div class="plan_ver unmarked">BASIC PLAN</div>
+              <div class="price unmarked">85<span class="sup">99</span><br><span class="currency_time unmarked">PLN/MSC</span></div>
+              <table class="plan_items unmarked">
                 <tr>
                   <td>Zakup towaru + dowóz</td>
                 </tr>
@@ -78,7 +83,7 @@
                   <td>Serwis</td>
                 </tr>
               </table>
-              <button class="join_button">dołącz</button>
+              <button class="join_button unmarked">dołącz</button>
             </div>
             <div class="plan marked">
               <div class="circle marked"></div>
@@ -242,17 +247,20 @@
 
 <footer>
     <div class="main_width">
-      <div class="copyright">Copyright 2014 | All Rights Reserved. - Sit On Chair</div>
-      <div class="motto_likes">
-        <div class="like_us">
-          <a href="https://www.flickr.com/" class="flickr"><img src="images/flickr.png" alt="flickr logo"></a>
-          <a href="https://vimeo.com/" class="vimeo"><img src="images/vimeo.png" alt="vimeo logo"></a>
-          <a href="https://pinterest.com/" class="pinterest"><img src="images/pinterest.png" alt="pinterest logo"></a>
-          <a href="https://twitter.com/" class="twitter"><img src="images/twitter.png" alt="twitter logo"></a>
+      <div class="footer_wrapper">
+        <div class="copyright">Copyright 2014 | All Rights Reserved. - Sit On Chair</div>
+        <div class="motto_likes">
+          <div class="like_us">
+            <a href="https://www.flickr.com/" class="flickr"><img src="images/flickr.png" alt="flickr logo"></a>
+            <a href="https://vimeo.com/" class="vimeo"><img src="images/vimeo.png" alt="vimeo logo"></a>
+            <a href="https://pinterest.com/" class="pinterest"><img src="images/pinterest.png" alt="pinterest logo"></a>
+            <a href="https://twitter.com/" class="twitter"><img src="images/twitter.png" alt="twitter logo"></a>
+          </div>
+          <div class="footer_motto">SIT <strong>ON</strong> CHAIR</div>
         </div>
-        <div class="footer_motto">SIT <strong>ON</strong> CHAIR</div>
       </div>
     </div>
 </footer>
+
 </body>
 </html>

@@ -1,12 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  var checkboxes = document.getElementsByTagName('input');
-
-  for (var i = 0; i < checkboxes.length; i++)  {
-    if (checkboxes[i].type === 'checkbox')   {
-      checkboxes[i].checked = false;
-    }
-  }
 
 // Zadanie 1 - animowane menu
 
@@ -14,16 +7,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   for (var i = 0; i < menu.length; i++) {
+
     menu[i].addEventListener('mouseover', function () {
 
       if (this.querySelector('li>ul')) {
         this.querySelector('li>ul').style.visibility = 'visible';
-      } else {
-        var newSubmenu = document.createElement('ul');
-        newSubmenu.className = 'submenu';
-        this.appendChild(newSubmenu);
-      }
 
+      }
     });
 
     menu[i].addEventListener('mouseout', function () {
@@ -41,16 +31,12 @@ document.addEventListener('DOMContentLoaded', function () {
   var photoDescription = document.querySelectorAll('.gallery_photo');
 
   for (var i = 0; i < photoDescription.length; i++) {
-
     photoDescription[i].addEventListener('mouseover', function () {
-        this.querySelector('.box_text').style.opacity = '0';
-
+      this.querySelector('.box_text').style.opacity = '0';
     });
-
     photoDescription[i].addEventListener('mouseout', function () {
       this.querySelector('.box_text').style.opacity = '1';
     });
-
   }
 
 // Zadanie 3 - slider gallery
@@ -62,36 +48,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
   galleryElements[index].classList.add('visible');
 
-  nextPhoto.addEventListener('click', function(){
+  nextPhoto.addEventListener('click', function () {
     index++;
-
-    if(index >= galleryElements.length) {
+    if (index >= galleryElements.length) {
       index = 0;
     }
-
     refreshImageStatus();
-
   });
 
-  prevPhoto.addEventListener('click', function(){
+  prevPhoto.addEventListener('click', function () {
     index--;
-
-    if(index < 0) {
+    if (index < 0) {
       index = galleryElements.length - 1;
-
     }
-
     refreshImageStatus();
-
   });
 
   function refreshImageStatus() {
-
     var visible = document.querySelector('.visible');
     visible.classList.remove('visible');
-
     galleryElements[index].classList.add('visible');
-
   }
 
 // Kalkulator
@@ -104,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
     dropdownArrow[i].parentElement.querySelector('ul').style.display = 'none'; //przypisanie inline css elementowi ul aby przycisk działał od pierwszego kliknięcia
 
     dropdownArrow[i].addEventListener('click', function () {
+
       var dropdown = this.parentElement.querySelector('ul');
 
       if (dropdown.style.display === 'none') {
@@ -111,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
         dropdown.style.display = 'none';
       }
-
     })
 
   }
@@ -141,25 +117,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (this.innerText === 'Clair') {
         document.querySelector('.panel_right .value').innerText = clairPrice;
-
-
       } else if (this.innerText === 'Margarita') {
         document.querySelector('.panel_right .value').innerText = margaritaPrice;
-
       } else if (this.innerText === 'Selena') {
         document.querySelector('.panel_right .value').innerText = selenaPrice;
-
-
       } else {
         document.querySelector('.panel_right .value').innerText = '';
       }
 
       this.parentElement.style.display = 'none';
-
       calculator();
-
     })
-
   }
 
   var chairColor = document.querySelectorAll('.chair_color li');
@@ -173,23 +141,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (this.innerText === 'Czerwony') {
         document.querySelector('.panel_right .color').innerText = chairRed;
-
       } else if (this.innerText === 'Czarny') {
         document.querySelector('.panel_right .color').innerText = chairBlack;
-
       } else if (this.innerText === 'Pomarańczowy') {
         document.querySelector('.panel_right .color').innerText = chairOrange;
-
       } else {
         document.querySelector('.panel_right .color').innerText = '';
       }
 
       this.parentElement.style.display = 'none';
-
       calculator();
-
     })
-
   }
 
   var chairUpholstery = document.querySelectorAll('.chair_upholstery li');
@@ -210,16 +172,13 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       this.parentElement.style.display = 'none';
-
       calculator();
-
     })
-
   }
 
   var checkbox = document.querySelector('#transport');
 
-  checkbox.addEventListener('click', function() {
+  checkbox.addEventListener('click', function () {
 
     if (checkbox.checked) {
       document.querySelector('.transport').innerText = 'Transport';
@@ -230,10 +189,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     calculator();
-
   });
 
-  function calculator () {
+  function calculator() {
+
     var typeCost = document.querySelector('.panel_right .value').innerText;
     var colorCost = document.querySelector('.panel_right .color').innerText;
     var fabricCost = document.querySelector('.panel_right .pattern').innerText;
@@ -246,7 +205,36 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       document.querySelector('.sum').lastElementChild.innerText = '';
     }
+  }
 
+  // Zaznaczenie planu taryfowego
+
+  var planButton = document.querySelectorAll('.join_button');
+
+  for (var i = 0; i < planButton.length; i++) {
+
+    planButton[i].addEventListener('click', function () {
+
+      removeMarked();
+
+      this.parentElement.classList.toggle('marked');
+      this.classList.toggle('marked');
+      this.previousElementSibling.classList.toggle('marked');
+      this.previousElementSibling.previousElementSibling.classList.toggle('marked');
+      this.parentElement.getElementsByTagName('div')[0].classList.toggle('marked');
+      this.parentElement.getElementsByTagName('div')[1].classList.toggle('marked');
+      this.parentElement.getElementsByTagName('div')[2].getElementsByTagName('span')[1].classList.toggle('marked');
+
+    })
+  }
+
+  function removeMarked() {
+
+    var marked = document.querySelectorAll('.marked');
+
+    for (var i = 0; i < marked.length; i++) {
+      marked[i].classList.remove('marked');
+    }
   }
 
 });
