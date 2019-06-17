@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
 
-// Zadanie 1 - animowane menu
+// Task 1 - show/hide submenu
 
   var menu = document.querySelectorAll('.nav_list>li');
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   }
 
-// Zadanie 2 - chowanie bloku z opisem zdjęcia
+// Task 2 - hide photo description on hover
 
   var photoDescription = document.querySelectorAll('.gallery_photo');
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-// Zadanie 3 - slider gallery
+// Task 3 - slider gallery
 
   var prevPhoto = document.querySelector('.button_left');
   var nextPhoto = document.querySelector('.button_right');
@@ -70,14 +70,13 @@ document.addEventListener('DOMContentLoaded', function () {
     galleryElements[index].classList.add('visible');
   }
 
-// Kalkulator
+// Additional task - total price calculator
 
-  // Animacja 'strzałek'
 
   var dropdownArrow = document.querySelectorAll('.list_arrow');
 
   for (var i = 0; i < dropdownArrow.length; i++) {
-    dropdownArrow[i].parentElement.querySelector('ul').style.display = 'none'; //przypisanie inline css elementowi ul aby przycisk działał od pierwszego kliknięcia
+    dropdownArrow[i].parentElement.querySelector('ul').style.display = 'none';
 
     dropdownArrow[i].addEventListener('click', function () {
 
@@ -91,8 +90,6 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
   }
-
-  // Funkcjonalność pola podsumowania
 
   var chairType = document.querySelectorAll('.chair_type li');
 
@@ -207,7 +204,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Zaznaczenie planu taryfowego
 
   var planButton = document.querySelectorAll('.join_button');
 
